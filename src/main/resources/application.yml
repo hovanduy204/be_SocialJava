@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: manager
+  datasource:
+    url: ${DBMS_CONNECTION:jdbc:mysql://localhost:3306/testbase}
+    driverClassName: "com.mysql.cj.jdbc.Driver"
+    password: ${DBMS_PASSWORD:Duy12345678@}
+    username: ${DBMS_USERNAME:root}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+  web:
+    resources:
+      static-locations: file:./uploads/
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 100MB
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: hovanduy1104@gmail.com
+    password: lrzv bwar xnwh ybop
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+app:
+  frontend:
+    url: http://localhost:3002
+file:
+  image-upload-dir: ./uploads/images
+  video-upload-dir: ./uploads/videos
+  audio-upload-dir: ./uploads/audios
+jwt:
+  signerKey: "sahsdhsdauhsuhvdhsuhdsvuhdshdshdvbsdhvbhsdhhsbdhdbhasdiasfiuwenfndcsjvisdivdsidvsaoioisacuihsdafhdshjhdshfsghdjhdsjh"
